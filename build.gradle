@@ -30,13 +30,6 @@ dependencies {
 
     // JACKSON
     implementation 'com.fasterxml.jackson.core:jackson-annotations:2.19.0'
-
-    // LOMBOK
-    compileOnly("org.projectlombok:lombok:1.18.38")
-    annotationProcessor("org.projectlombok:lombok:1.18.38")
-
-    testCompileOnly("org.projectlombok:lombok:1.18.38")
-    testAnnotationProcessor("org.projectlombok:lombok:1.18.38")
 }
 
 java {
