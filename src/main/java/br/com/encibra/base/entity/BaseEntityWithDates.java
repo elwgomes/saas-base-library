@@ -3,20 +3,12 @@ package br.com.encibra.base.entity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
 @MappedSuperclass
-@AllArgsConstructor
-@NoArgsConstructor
 public abstract class BaseEntityWithDates extends BaseEntity {
 
     @CreationTimestamp
@@ -29,4 +21,27 @@ public abstract class BaseEntityWithDates extends BaseEntity {
     @Column(name = "UPDATED_AT", insertable = false, updatable = false)
     public LocalDateTime updatedAt;
 
+    public BaseEntityWithDates() {
+    }
+
+    public BaseEntityWithDates(LocalDateTime createdAt, LocalDateTime updatedAt) {
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
 }

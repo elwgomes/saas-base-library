@@ -11,9 +11,11 @@ import org.springframework.data.jpa.domain.Specification;
 
 import java.util.List;
 
-@Slf4j
 public abstract class AbstractFindAndMapAndFilterBaseService<E extends BaseEntity, D, F>
         extends AbstractFindAndMapBaseService<E, D> implements FindAndMapAndFilterBaseService<E, D, F> {
+
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(AbstractFindAndMapAndFilterBaseService.class);
+
     public AbstractFindAndMapAndFilterBaseService(BaseRepository<E> repository, HttpException exception) {
         super(repository, exception);
     }

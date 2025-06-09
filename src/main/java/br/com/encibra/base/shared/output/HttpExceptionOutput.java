@@ -3,11 +3,9 @@ package br.com.encibra.base.shared.output;
 import br.com.encibra.base.shared.HttpException;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.Data;
 
 import java.time.LocalDateTime;
 
-@Data
 public class HttpExceptionOutput {
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
@@ -29,4 +27,35 @@ public class HttpExceptionOutput {
         this.code = exception.getStatus();
     }
 
+    public LocalDateTime getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(LocalDateTime timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 }
