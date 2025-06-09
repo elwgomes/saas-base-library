@@ -1,11 +1,9 @@
 package br.com.encibra.base.shared;
 
 import br.com.encibra.base.shared.output.HttpExceptionOutput;
-import lombok.Getter;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-@Getter
 public abstract class HttpException extends RuntimeException {
 
     public static final String DEFAULT_ERROR = "Erro ao concluir a operação";
@@ -44,4 +42,11 @@ public abstract class HttpException extends RuntimeException {
         return ResponseEntity.status(status).body(error);
     }
 
+    public Integer getStatus() {
+        return status;
+    }
+
+    public String getError() {
+        return error;
+    }
 }

@@ -4,7 +4,6 @@ import br.com.encibra.base.entity.BaseEntity;
 import br.com.encibra.base.repository.BaseRepository;
 import br.com.encibra.base.service.FindAndMapAndFilterBaseService;
 import br.com.encibra.base.shared.HttpException;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
